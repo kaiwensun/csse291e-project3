@@ -1,0 +1,4 @@
+https://janzhou.org/2014/10/hadoop-wordcount/
+http://hadoop.apache.org/docs/r2.7.0/hadoop-project-dist/hadoop-con/SingleCluster.html
+http://www.alexhe.org/hadoop/2015-09-17/845.html
+https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
