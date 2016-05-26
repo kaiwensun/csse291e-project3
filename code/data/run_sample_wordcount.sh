@@ -11,7 +11,7 @@ printf "${SIGN} Uploading the input files to hadoop file system. the -put flag i
 hadoop fs -put -f file*.txt myinput
 
 printf "${SIGN} Removing myoutput directory. The output should not exist.\n"
-hadoop fs -rm -r -f myoutput
+hadoop fs -rm -r -f -skipTrash myoutput
 
 printf "${SIGN} Current files in hadoop file system are:\n"
 hadoop fs -ls myinput
@@ -25,5 +25,5 @@ jar cf wc.jar WordCount*.class
 printf "${SIGN} Run wc.jar using hadoop\n"
 hadoop jar wc.jar WordCount /user/root/myinput /user/root/myoutput
 
-printf "${SIGN} Fetching the result from HDFS\n"
+printf "${SIGN} Fetching the result from HDFS:\n"
 hadoop fs -cat myoutput/part-r-00000

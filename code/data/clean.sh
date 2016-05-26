@@ -6,4 +6,4 @@ printf "${SIGN} Removing *.class and *.jar\n"
 rm -f WordCount/*.class WordCount/*.jar
 
 printf "${SIGN} Removing files in HDFS\n"
-hadoop fs -rm -r -f myinput myoutput
+hadoop fs -rm -r -f -skipTrash myinput myoutput
