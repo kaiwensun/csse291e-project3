@@ -25,5 +25,5 @@ jar cf wc.jar WordCount*.class
 printf "${SIGN} Run wc.jar using hadoop\n"
 hadoop jar wc.jar WordCount /user/root/myinput /user/root/myoutput
 
-printf "${SIGN} Fetching the result from HDFS"
+printf "${SIGN} Fetching the result from HDFS\n"
 hadoop fs -cat myoutput/part-r-00000
