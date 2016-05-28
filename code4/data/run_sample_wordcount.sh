@@ -8,7 +8,8 @@ printf "${SIGN} Making a directory at the hadoop file system.\n"
 $HADOOP_PREFIX/bin/hadoop fs -mkdir -p myinput
 
 printf "${SIGN} Uploading the input files to hadoop file system. the -put flag is equivalent to -copyFromLocal. The -f flag forces overwrite.\n"
-$HADOOP_PREFIX/bin/hadoop fs -put -f file*.txt myinput
+#$HADOOP_PREFIX/bin/hadoop fs -put -f file*.txt myinput
+$HADOOP_PREFIX/bin/hadoop fs -put -f /usr/local/hadoop/input/* myinput
 
 printf "${SIGN} Removing myoutput directory. The output should not exist.\n"
 $HADOOP_PREFIX/bin/hadoop fs -rm -r -f -skipTrash myoutput
