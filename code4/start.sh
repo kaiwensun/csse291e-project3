@@ -16,7 +16,7 @@ docker network create -d bridge  my-bridge-network
 #	docker pull sequenceiq/hadoop-docker:2.7.0
 
 printf "${SIGN} Creating containers\n"
-docker run -v ${PWD}/data:/data --name Master --net my-bridge-network -td sequenceiq/hadoop-docker:2.7.0 bash
+docker run -v ${PWD}/data:/data -e HADOOP_CLASSPATH=/usr/java/default/lib/tools.jar --name Master --net my-bridge-network -td sequenceiq/hadoop-docker:2.7.0 bash
 docker run -v ${PWD}/data:/data --name Slave1 --net my-bridge-network -td sequenceiq/hadoop-docker:2.7.0 bash
 docker run -v ${PWD}/data:/data --name Slave2 --net my-bridge-network -td sequenceiq/hadoop-docker:2.7.0 bash
 docker run -v ${PWD}/data:/data --name Slave3 --net my-bridge-network -td sequenceiq/hadoop-docker:2.7.0 bash
@@ -65,5 +65,5 @@ docker exec -t Master /usr/local/hadoop/sbin/start-all.sh
 printf "${SIGN} Executing run_sample_wordcount.sh at Master\n"
 docker exec -t Master /data/run_sample_wordcount.sh
 
-printf "${SIGN} Cleaning containers\n"
-${PWD}/clean.sh
+#printf "${SIGN} Cleaning containers\n"
+#${PWD}/clean.sh
