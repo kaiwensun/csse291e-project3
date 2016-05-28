@@ -1,2 +1,2 @@
-This is trying to deploy a cluster of hadoop. Not finished yet.
+This deploies a cluster of hadoop (1 master + 4 slaves)
 
