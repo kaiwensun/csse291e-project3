@@ -18,11 +18,12 @@ public class WordCount {
 
     private final static IntWritable one = new IntWritable(1);
     private Text word = new Text();
+    private static Text prev = null;
 
-	private static Text prev = null;
 
     public void map(Object key, Text value, Context context
                     ) throws IOException, InterruptedException {
+      //Text prev = null;
       StringTokenizer itr = new StringTokenizer(value.toString());
       while (itr.hasMoreTokens()) {
 		if(prev==null){
@@ -33,6 +34,7 @@ public class WordCount {
         word.set(itr.nextToken());
         context.write(new Text(prev.toString()+" "+word.toString()), one);
 		prev = word;
+		word = new Text();
       }
     }
   }

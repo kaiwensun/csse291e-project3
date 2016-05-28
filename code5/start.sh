@@ -65,5 +65,5 @@ docker exec -t Master /usr/local/hadoop/sbin/start-all.sh
 printf "${SIGN} Executing run_sample_wordcount.sh at Master\n"
 docker exec -t Master /data/run_sample_wordcount.sh
 
-#printf "${SIGN} Cleaning containers\n"
-#${PWD}/clean.sh
+printf "${SIGN} Cleaning containers\n"
+${PWD}/clean.sh
