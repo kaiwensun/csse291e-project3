@@ -1,0 +1,2 @@
+Hello Hadoop! Hello project3!
+Goodbye Hadoop! Bye project3!
