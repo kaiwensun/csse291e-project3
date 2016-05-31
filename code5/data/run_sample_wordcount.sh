@@ -28,3 +28,11 @@ $HADOOP_PREFIX/bin/hadoop jar wc.jar WordCount /user/root/myinput /user/root/myo
 
 printf "${SIGN} Fetching the result from HDFS:\n"
 $HADOOP_PREFIX/bin/hadoop fs -cat myoutput/part-r-00000
+
+printf "${SIGN} Fetching the result from HDFS:\n"
+$HADOOP_PREFIX/bin/hadoop fs -cat myoutput/part-r-00000 >temp.txt
+
+printf "${SIGN} RUN python: Bigram result analysis:\n"
+python BigramAnalysis.py 
+rm temp.txt
+

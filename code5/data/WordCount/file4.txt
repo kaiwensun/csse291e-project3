@@ -1,3 +1,51 @@
 This is a the fourth file
 This line has five words
 This line has five words
+
+Project 3: MapReduce Bigrams CSE 291 Spring 2016
+Assigned: Tuesday, 17 May Due: Tuesday, 31 May
+This project is designed to give you a basic familiarity with the MapReduce paradigm via the Hadoop framework. We give you Dockerfiles to enable you to build and start a Hadoop cluster that is pre-loaded with the Hadoop word-count exampland text data files.
+Your first task is to use the Docker console to start up a Hadoop cluster consisting of one Hadoop/HDFS master node and four(4) Hadoop/HDFS client nodes.
+Your second task is to run the WordCount example, as is, without modification, and confirm that your cluster is working.
+Your third task is to modify the WordCount example to create a BigramExample, which counts the number of bigrams within the corpus. At the conclusion of its exectution, it should output three pieces of information, one per line: (1 )the total number of bigrams, (2)i the most common bigram, and (3) the number of bigrams required to add up to 10% of all bigrams.
+Collaboration
+You may work with up to one other person on this project.
+Counting Bigrams
+For the purpose of this assignment, don’t get fancy. We know it it the end of the quarter. Just use static variables within the mapper to keep track of the current word and the previous word. Output a count of one for each pair, and then combine and reduce from there. This gives you a sorted histogram of bigrams.
+Generating the Output
+Once you have the histogram of the bigrams, it is straight-forward to determinethe most frequent, or even top-N, bigrams. If you reduce the histogram of bigrams to a count of bigrams, it will bs straight-froward to determine how many of the top-N are needed to reach at least 10% of the total.
+
+OAKLAND — When it was over and they had beat the Thunder and the longest of long odds, the victorious Warriors, the survivor Warriors, did nothing to downplay what they had just accomplished.
+This was no time to play it cool, not on a Monday night when the volume on fans inside Oracle Arena had been set to Blast and the rainstorm of yellow confetti fluttered down from the rafters and on to the party below just after the clock drained to 0:00. Golden State beat Oklahoma City 96-88 in the game and 4-3 in the series to win the Western Conference title and advance to The Finals for the second year in a row, and even the veteran team knew the moment was special whether or not it was the ultimate goal of a series win in June.
+The moments -- plural -- actually. The Warriors, after all, had come back from a 3-1 deficit to win after only nine clubs in 232 previous tries, all of 3.9 percent of the tries in NBA history, had pulled the same 180. They had done it against a quality opponent capable of winning big games on the road, not in the first round when an overfed team in cruise mode stirred in time to swat aside an overmatched weakling. And they had earned it with the very poise that had been surprisingly missing in the middle of the series, with a victory in the final minutes of Game 6 on Saturday in Oklahoma City followed by a victory in the final minute two nights later in California.
+It's definitely the biggest thing that this team has had to overcome and it took a great, tremendous effort and fight to overcome it.
+– Golden State's Draymond Green
+
+So, no, the Warriors would not choose calm. They did in tone, without the hysteria to match the fan base around them, but not in words. It was that big of a moment.
+"I think everybody will look at 73 wins (in the regular season) and say, 'Wow, this team never hit any adversity,' but there is adversity in every season," All-Star power forward Draymond Green said. "It all comes in different forms. But when you're talking down 3-1, and everything's on the line, that makes it 10 times worse. So it's definitely the biggest thing that this team has had to overcome and it took a great, tremendous effort and fight to overcome it. But like I said after Game 4, if I think anybody can do it, it's this group. Because once we figured something out, we can get it rolling, and I think, although we lost Game 4, and we got punished, I think we figured it out. It wasn't easy. That's a great team we just beat and we had to continue to fight. And I knew if we continued to fight, which I had no doubt in my mind that we would, that we could do it.
+"So it's by far the biggest thing. It's just everything that went into it from the great season we had the hopes of repeating, and that all being on the line in every single game for the last three games we had to win is, for sure, the largest amount of adversity we had to overcome."
+The Warriors understood how close 73 wins came to becoming something to be thrown in their face, a tool to mock them as a great regular-season team that didn't get victories when it really mattered. Try in-their-face close, with Oklahoma City within three points in the final minute in Game 6 and then within four with 1:40 remaining in Game 7.
+
+Project 3: MapReduce Bigrams CSE 291 Spring 2016
+Assigned: Tuesday, 17 May Due: Tuesday, 31 May
+This project is designed to give you a basic familiarity with the MapReduce paradigm via the Hadoop framework. We give you Dockerfiles to enable you to build and start a Hadoop cluster that is pre-loaded with the Hadoop word-count exampland text data files.
+Your first task is to use the Docker console to start up a Hadoop cluster consisting of one Hadoop/HDFS master node and four(4) Hadoop/HDFS client nodes.
+Your second task is to run the WordCount example, as is, without modification, and confirm that your cluster is working.
+Your third task is to modify the WordCount example to create a BigramExample, which counts the number of bigrams within the corpus. At the conclusion of its exectution, it should output three pieces of information, one per line: (1 )the total number of bigrams, (2)i the most common bigram, and (3) the number of bigrams required to add up to 10% of all bigrams.
+Collaboration
+You may work with up to one other person on this project.
+Counting Bigrams
+For the purpose of this assignment, don’t get fancy. We know it it the end of the quarter. Just use static variables within the mapper to keep track of the current word and the previous word. Output a count of one for each pair, and then combine and reduce from there. This gives you a sorted histogram of bigrams.
+Generating the Output
+Once you have the histogram of the bigrams, it is straight-forward to determinethe most frequent, or even top-N, bigrams. If you reduce the histogram of bigrams to a count of bigrams, it will bs straight-froward to determine how many of the top-N are needed to reach at least 10% of the total.
+
+OAKLAND — When it was over and they had beat the Thunder and the longest of long odds, the victorious Warriors, the survivor Warriors, did nothing to downplay what they had just accomplished.
+This was no time to play it cool, not on a Monday night when the volume on fans inside Oracle Arena had been set to Blast and the rainstorm of yellow confetti fluttered down from the rafters and on to the party below just after the clock drained to 0:00. Golden State beat Oklahoma City 96-88 in the game and 4-3 in the series to win the Western Conference title and advance to The Finals for the second year in a row, and even the veteran team knew the moment was special whether or not it was the ultimate goal of a series win in June.
+The moments -- plural -- actually. The Warriors, after all, had come back from a 3-1 deficit to win after only nine clubs in 232 previous tries, all of 3.9 percent of the tries in NBA history, had pulled the same 180. They had done it against a quality opponent capable of winning big games on the road, not in the first round when an overfed team in cruise mode stirred in time to swat aside an overmatched weakling. And they had earned it with the very poise that had been surprisingly missing in the middle of the series, with a victory in the final minutes of Game 6 on Saturday in Oklahoma City followed by a victory in the final minute two nights later in California.
+It's definitely the biggest thing that this team has had to overcome and it took a great, tremendous effort and fight to overcome it.
+– Golden State's Draymond Green
+
+So, no, the Warriors would not choose calm. They did in tone, without the hysteria to match the fan base around them, but not in words. It was that big of a moment.
+"I think everybody will look at 73 wins (in the regular season) and say, 'Wow, this team never hit any adversity,' but there is adversity in every season," All-Star power forward Draymond Green said. "It all comes in different forms. But when you're talking down 3-1, and everything's on the line, that makes it 10 times worse. So it's definitely the biggest thing that this team has had to overcome and it took a great, tremendous effort and fight to overcome it. But like I said after Game 4, if I think anybody can do it, it's this group. Because once we figured something out, we can get it rolling, and I think, although we lost Game 4, and we got punished, I think we figured it out. It wasn't easy. That's a great team we just beat and we had to continue to fight. And I knew if we continued to fight, which I had no doubt in my mind that we would, that we could do it.
+"So it's by far the biggest thing. It's just everything that went into it from the great season we had the hopes of repeating, and that all being on the line in every single game for the last three games we had to win is, for sure, the largest amount of adversity we had to overcome."
+The Warriors understood how close 73 wins came to becoming something to be thrown in their face, a tool to mock them as a great regular-season team that didn't get victories when it really mattered. Try in-their-face close, with Oklahoma City within three points in the final minute in Game 6 and then within four with 1:40 remaining in Game 7.
