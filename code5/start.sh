@@ -7,14 +7,22 @@ XML='/data/xml/core-site.xml  /data/xml/hdfs-site.xml  /data/xml/mapred-site.xml
 
 
 printf "\033[1;41mThis script is written by Kaiwen Sun and Wenjia Ouyang\033[0m\n"
+
+#For the first time, create the containers, with a storage volume mounted from local host ~/cse291/project3/code/data to container /data
+#	docker pull sequenceiq/hadoop-docker:2.7.0
+if [[ -z $(docker images -q sequenceiq/hadoop-docker:2.7.0) ]]
+then
+	printf "${SIGN} Pulling sequenceiq/hadoop-docker:2.7.0 docker image\n"
+	docker pull sequenceiq/hadoop-docker:2.7.0
+else
+	printf "${SIGN} Docker image sequenceiq/hadoop-docker:2.7.0 already exists\n"
+fi
+
 printf "${SIGN} Making sure docker containers don't conflict\n"
 ${PWD}/clean.sh
 
 printf "${SIGN} Creating network bridge\n"
 docker network create -d bridge  my-bridge-network
-
-#For the first time, create the containers, with a storage volume mounted from local host ~/cse291/project3/code/data to container /data
-#	docker pull sequenceiq/hadoop-docker:2.7.0
 
 printf "${SIGN} Creating containers\n"
 docker run -v ${PWD}/data:/data -e HADOOP_CLASSPATH=/usr/java/default/lib/tools.jar --name Master --net my-bridge-network -td sequenceiq/hadoop-docker:2.7.0 bash

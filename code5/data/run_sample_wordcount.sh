@@ -8,8 +8,8 @@ printf "${SIGN} Making a directory at the hadoop file system.\n"
 $HADOOP_PREFIX/bin/hadoop fs -mkdir -p myinput
 
 printf "${SIGN} Uploading the input files to hadoop file system. the -put flag is equivalent to -copyFromLocal. The -f flag forces overwrite.\n"
-$HADOOP_PREFIX/bin/hadoop fs -put -f file*.txt myinput
-#$HADOOP_PREFIX/bin/hadoop fs -put -f /usr/local/hadoop/input/* myinput
+#$HADOOP_PREFIX/bin/hadoop fs -put -f file*.txt myinput
+$HADOOP_PREFIX/bin/hadoop fs -put -f /usr/local/hadoop/input/* myinput
 
 printf "${SIGN} Removing myoutput directory. The output should not exist.\n"
 $HADOOP_PREFIX/bin/hadoop fs -rm -r -f -skipTrash myoutput
@@ -33,8 +33,9 @@ printf "${SIGN} Fetching the result from HDFS to (container's) local file\n"
 $HADOOP_PREFIX/bin/hadoop fs -cat myoutput/part-r-00000 >temp.txt
 #$HADOOP_PREFIX/bin/hadoop fs -get myoutput/part-r-00000 temp.txt
 
-printf "${SIGN} RUN python: Bigram result analysis:\n"
+printf "${SIGN} Run python: Bigram result analysis:\n"
 python BigramAnalysis.py > computed.result
+cat computed.result
 
 printf "${SIGN} Removing (container's) local file\n"
 rm temp.txt
