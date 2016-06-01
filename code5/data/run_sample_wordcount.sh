@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SIGN='\033[1;42mKevin:\033[0m'
+SIGN='\033[1;42mKaiwen and Wenjia:\033[0m'
 cd /data/WordCount
 
 #In this docker image, there is already an /input/ directory in HDFS. Don't touch it.
@@ -26,13 +26,15 @@ jar cf wc.jar WordCount*.class
 printf "${SIGN} Run wc.jar using hadoop\n"
 $HADOOP_PREFIX/bin/hadoop jar wc.jar WordCount /user/root/myinput /user/root/myoutput
 
-printf "${SIGN} Fetching the result from HDFS:\n"
+printf "${SIGN} Fetching the result from HDFS to show on terminal:\n"
 $HADOOP_PREFIX/bin/hadoop fs -cat myoutput/part-r-00000
 
-printf "${SIGN} Fetching the result from HDFS:\n"
+printf "${SIGN} Fetching the result from HDFS to (container's) local file\n"
 $HADOOP_PREFIX/bin/hadoop fs -cat myoutput/part-r-00000 >temp.txt
+#$HADOOP_PREFIX/bin/hadoop fs -get myoutput/part-r-00000 temp.txt
 
 printf "${SIGN} RUN python: Bigram result analysis:\n"
-python BigramAnalysis.py 
-rm temp.txt
+python BigramAnalysis.py > computed.result
 
+printf "${SIGN} Removing (container's) local file\n"
+rm temp.txt

@@ -1,11 +1,12 @@
 #!/bin/bash
 
-SIGN='\033[1;42mKevin:\033[0m'
+SIGN='\033[1;42mKaiwen and Wenjia:\033[0m'
 PWD=$(pwd)
 XML='/data/xml/core-site.xml  /data/xml/hdfs-site.xml  /data/xml/mapred-site.xml  /data/xml/masters  /data/xml/slaves'
 
 
 
+printf "\033[1;41mThis script is written by Kaiwen Sun and Wenjia Ouyang\033[0m\n"
 printf "${SIGN} Making sure docker containers don't conflict\n"
 ${PWD}/clean.sh
 
@@ -70,3 +71,7 @@ docker exec -t Master /data/run_sample_wordcount.sh
 
 printf "${SIGN} Cleaning containers\n"
 ${PWD}/clean.sh
+
+printf "${SIGN} Verifying result\n"
+${PWD}/verify.sh
+printf "\033[1;41mThis script is written by Kaiwen Sun and Wenjia Ouyang\033[0m\n"

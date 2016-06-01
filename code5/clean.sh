@@ -1,5 +1,5 @@
 #!/bin/bash
-SIGN='\033[1;42mKevin:\033[0m'
+SIGN='\033[1;42mKaiwen and Wenjia:\033[0m'
 ALLHOSTS='Master Slave1 Slave2 Slave3 Slave4'
 
 printf "${SIGN} Stopping conflicting containers\n"
