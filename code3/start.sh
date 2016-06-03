@@ -1,12 +1,13 @@
 #!/bin/bash
+#Author: Kaiwen sun
 
-SIGN='\033[1;42mKaiwen and Wenjia:\033[0m'
+SIGN='\033[1;42mKaiwen:\033[0m'
 PWD=$(pwd)
 XML='/data/xml/core-site.xml  /data/xml/hdfs-site.xml  /data/xml/mapred-site.xml  /data/xml/masters  /data/xml/slaves'
 
 
 
-printf "\033[1;41mThis script is written by Kaiwen Sun and Wenjia Ouyang\033[0m\n"
+printf "\033[1;41mThis script is written by Kaiwen Sun\033[0m\n"
 
 #For the first time, create the containers, with a storage volume mounted from local host ~/cse291/project3/code/data to container /data
 #	docker pull sequenceiq/hadoop-docker:2.7.0
@@ -82,4 +83,4 @@ ${PWD}/clean.sh
 
 printf "${SIGN} Verifying result\n"
 ${PWD}/verify.sh
-printf "\033[1;41mThis script is written by Kaiwen Sun and Wenjia Ouyang\033[0m\n"
+printf "\033[1;41mThis script is written by Kaiwen Sun\033[0m\n"

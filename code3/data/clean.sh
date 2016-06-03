@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SIGN='\033[1;42mKevin:\033[0m'
+SIGN='\033[1;42mKaiwen:\033[0m'
 
 printf "${SIGN} Removing *.class and *.jar\n"
 rm -f WordCount/*.class WordCount/*.jar

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SIGN='\033[1;42mKaiwen and Wenjia:\033[0m'
+SIGN='\033[1;42mKaiwen:\033[0m'
 cd /data/WordCount
 
 #In this docker image, there is already an /input/ directory in HDFS. Don't touch it.
